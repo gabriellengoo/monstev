@@ -1,11 +1,10 @@
 <a-scene vr-mode-ui="enabled: false;"
-  renderer="colorManagement: true;"
+  renderer="colorManagement: true; antialias: true;"
   gltf-model="dracoDecoderPath: https://www.gstatic.com/draco/v1/decoders/">
 
   <a-assets>
 
     <!-- Celestial Swarm Energy -->
-
     <a-asset-item id="hse1" src="/assets/models/GLB_celestial_swarm_energy/hse1/hse1-v2.gltf"></a-asset-item>
     <a-asset-item id="hse2" src="/assets/models/GLB_celestial_swarm_energy/hse2/hse2.gltf"></a-asset-item>
     <!-- Cosmic Plant Intelligence -->
@@ -13,28 +12,51 @@
     <a-asset-item id="pki2" src="/assets/models/GLB_cosmic_plant_intelligence/PKI2/PKI2.gltf"></a-asset-item>
 
     <!-- Imperfect Extraterrestrial Soul -->
-        <a-asset-item id="uas1" src="/assets/models/GLB_imperfect_extraterrestrial_soul/UAS1/UAS1.gltf"></a-asset-item>
+    <a-asset-item id="uas1" src="/assets/models/GLB_imperfect_extraterrestrial_soul/UAS1/UAS1.gltf"></a-asset-item>
     <a-asset-item id="uas2" src="/assets/models/GLB_imperfect_extraterrestrial_soul/uas2/uas2.gltf"></a-asset-item>
     
+        <!-- env Assets -->
+    <a-asset-item id="tree" src="/assets/models/tree.glb"></a-asset-item>
+    <a-asset-item id="flower" src="/assets/models/mkflower.glb"></a-asset-item>
+    <a-asset-item id="sakura" src="/assets/models/Sakura.glb"></a-asset-item>
+    <a-asset-item id="box" src="/assets/models/box.glb"></a-asset-item>
+
 
   </a-assets>
 
-  <a-entity camera="active: true" look-controls wasd-controls position="0 1.6 5"></a-entity>
-  <a-entity gltf-model="#hse1" position="17 1 10" scale="2 2 2" animation-mixer="clip: animation_0; loop: repeat;"></a-entity>
-  <a-entity gltf-model="#uas1" position="3 2 -3"  scale="0.5 0.5 0.5" animation-mixer="clip: animation_0; loop: repeat;"></a-entity>
-  <a-entity gltf-model="#pki1" position="-10 3 15"  scale="1 1 1" animation-mixer="clip: animation_0; loop: repeat;"></a-entity>
-  <a-entity gltf-model="#hse2" position="-3 10 -3" scale="1 1 1" animation-mixer="clip: animation_0; loop: repeat;"></a-entity>
-  <a-entity gltf-model="#pki2" position="-20 10 0"  scale="1 1 1" animation-mixer="clip: animation_0; loop: repeat;"></a-entity>
-  <a-entity gltf-model="#uas2" position="7 3 2"  scale="1 1 1" animation-mixer="clip: animation_0; loop: repeat;"></a-entity>
+    <!-- Lights -->
+
+      <a-entity light="type: ambient;"></a-entity>
+
+    <!-- Monsters -->
+
+  <a-entity camera="active: true" look-controls wasd-controls position="0 7 30"></a-entity>
+  <a-entity gltf-model="#hse1" position="100 1 10" scale="3 3 3" animation-mixer="clip: animation_0; loop: repeat;" animation="property: position; to: -100 1 10; dur: 10000; dir: normal; loop: true" ></a-entity>
+  <a-entity gltf-model="#uas1" position="3 5 -3"  scale="2 2 2" animation-mixer="clip: animation_0; loop: repeat;"></a-entity>
+  <a-entity gltf-model="#pki1" position="-10 5 15"  scale="3 3 3" animation-mixer="clip: animation_0; loop: repeat;"></a-entity>
+  <a-entity gltf-model="#hse2" position="-3 10 -3" scale="2 2 2" animation-mixer="clip: animation_0; loop: repeat;"></a-entity>
+  <a-entity gltf-model="#pki2" position="-20 10 0"  scale="2 2 2" animation-mixer="clip: animation_0; loop: repeat;"></a-entity>
+  <a-entity gltf-model="#uas2" position="7 5 2"  scale="2 2 2" animation-mixer="clip: animation_0; loop: repeat;"></a-entity>
+
+    <!-- Env -->
+
+    <a-entity gltf-model="#tree" position="10 1 -30" scale="300 300 300"></a-entity>
+  <a-entity gltf-model="#sakura" position="-30 4 34"  scale="3 3 3" animation="property: position; to: -30 10 34; dur: 2000; dir: alternate; loop: true"></a-entity>
+  <a-entity gltf-model="#sakura" position="30 4 34"  scale="5 5 5" animation="property: position; to: 30 10 34; dur: 2000; dir: alternate; loop: true"></a-entity>
+  <a-entity gltf-model="#flower" position="-60 15 -13"  scale="3 3 3" animation="property: rotation; to: 0 30 0; dur: 2000;  dir: alternate;loop: true"></a-entity>
+  <a-entity gltf-model="#flower" position="-28 20 1"  scale="2 2 2" animation="property: rotation; to: 0 30 0; dur: 2000;  dir: alternate; loop: true"></a-entity>
+
+  <a-entity gltf-model="#box" rotation="0 180 0" position="15 11 -10" scale="5 5 5"></a-entity>
+      
 
 <a-entity cube-envmap></a-entity>
       <a-entity
-        terrain-model="dem: url(/assets/textures/gale.bin);
-          map: url(/assets/textures/gale.png);
-          planeWidth: 100;
-          planeHeight: 100;
-          segmentsWidth: 250;
-          segmentsHeight: 100;
+        terrain-model="dem: url(/assets/textures/jot.bin);
+          map: url(/assets/textures/jot1.png);
+          planeWidth: 200;
+          planeHeight: 120;
+          segmentsWidth: 199;
+          segmentsHeight: 199;
           zPosition: 2;"
           position="0 0 0"
       ></a-entity>
