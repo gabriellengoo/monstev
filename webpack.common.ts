@@ -18,7 +18,7 @@ const config: Configuration = {
     path: _resolve(__dirname, 'dist'),
     filename: 'assets/js/app.[contenthash].js',
     library: {
-      name: 'aircards',
+      name: 'xochiworld',
       type: 'umd'
     },
     clean: true,

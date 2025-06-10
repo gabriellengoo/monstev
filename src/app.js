@@ -5,12 +5,19 @@ import './lib/styles/index.scss'
 document.body.style.touchAction = 'none'
 document.body.insertAdjacentHTML('afterbegin', guiHtml)
 
-// import { ComponentName } from './lib/components/project/component-name'
+import { CubeEnvMap } from './lib/components/cube-env-map'
+import './lib/components/terrainloader.js';
+import './lib/components/terrain-model.js'
+
 const projectComponents = {
-  //'coponent-name': ComponentName
+  'cube-envmap': CubeEnvMap
 }
 
 const registerComponents = components =>
-  Object.keys(components).map(k =>
-    AFRAME.registerComponent(k, components[k]))
+  Object.keys(components).forEach(name => {
+    if (!AFRAME.components[name]) {
+      AFRAME.registerComponent(name, components[name])
+    }
+  })
+
 registerComponents(projectComponents)
